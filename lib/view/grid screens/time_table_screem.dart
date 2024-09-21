@@ -75,7 +75,7 @@ class TimeTable extends StatelessWidget {
                       TableItem(text: "Thu",color: Colors.black),
                       TableItem(text: ""),
                       TableItem(text: ""),
-                      TableItem(text: ""),
+                      TableItem(text: "sad"),
                       TableItem(text: ""),
                       TableItem(text: ""),
                       TableItem(text: ""),
@@ -92,7 +92,6 @@ class TimeTable extends StatelessWidget {
                       TableItem(text: ""),
                     ],
                   ),
-
                 ],
               ),
             ),

@@ -1,4 +1,6 @@
 import 'package:education_managment/view/grid%20screens/alerts_screen.dart';
+import 'package:education_managment/view/grid%20screens/discloture_screen.dart';
+import 'package:education_managment/view/grid%20screens/informationBank_screen.dart';
 import 'package:education_managment/view/grid%20screens/marks_screen.dart';
 import 'package:education_managment/view/grid%20screens/time_table_screem.dart';
 import 'package:flutter/material.dart';
@@ -36,11 +38,17 @@ class Body extends StatelessWidget {
             imageColor: AppColors.primaryColor),
         GridItem(image: AssetsImages.exam, label: "برنامج الامتحان"),
         GridItem(
+            function: () {
+              Get.to(InformationBankScreen());
+            },
             image: AssetsImages.book,
             label: "بنك المعلومات",
             imageSize: 130,
             imageColor: AppColors.primaryColor),
         GridItem(
+            function: () {
+              Get.to(DisclotureScreen());
+            },
             image: AssetsImages.bank,
             label: "الكشف المالي",
             imageSize: 130,
