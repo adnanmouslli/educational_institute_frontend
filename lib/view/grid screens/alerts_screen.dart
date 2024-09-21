@@ -31,7 +31,8 @@ class AlertsScreen extends StatelessWidget {
             itemCount: controller.alerts.length,
             itemBuilder: (context, index) {
               final alert = controller.alerts[index];
-              return Padding(
+              return
+                Padding(
                 padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Card(

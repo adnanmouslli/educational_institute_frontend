@@ -8,4 +8,13 @@ const String loginUrl="$studentUrl/login.php";
 const String registerUrl="$studentUrl/registration.php";
 const String getMarksUrl="$markUrl/getAllMark.php";
 const String getAlertsUrl="$alertUrl/getAllAlert.php";
+
+const String getFilePdf="$baseUrl/information_bank/getFilePdf.php";
+
+const String getDisclosure="$baseUrl/financial_disclosure/getDisclosure.php";
+const String addDisclosure="$baseUrl/financial_disclosure/addDisclosure.php";
+
+
+
 const Map<String,String> headerApi={"Content-Type": "application/json"};
+
