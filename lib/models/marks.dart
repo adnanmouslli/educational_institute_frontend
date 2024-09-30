@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:education_managment/utils/extenstions.dart';
+
 class MarksModel {
   final String mark;
   final String subject_name;
@@ -9,7 +10,6 @@ class MarksModel {
   final String? date;
 
   MarksModel({
-
     required this.mark,
     required this.subject_name,
     required this.supervisor_name,

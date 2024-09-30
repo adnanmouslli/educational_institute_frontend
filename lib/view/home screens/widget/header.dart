@@ -3,10 +3,8 @@ import 'package:education_managment/utils/app_routes.dart';
 import 'package:education_managment/utils/cache_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../utils/colors.dart';
 import '../../../utils/images.dart';
-
 class Header extends StatelessWidget {
   const Header({super.key, required this.studentModel});
 

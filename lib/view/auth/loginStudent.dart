@@ -9,8 +9,8 @@ import 'package:education_managment/view/auth/header_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginStudent extends StatelessWidget {
+  LoginStudent({super.key});
 
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();

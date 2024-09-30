@@ -28,7 +28,6 @@ class HomeController extends GetxController {
   void getAllDiscloture() async {
     try {
       isLoading(true); // بدء التحميل
-
       // الاتصال بـ API للحصول على الدفعات
       var url = Uri.parse(getDisclosure);
       var response = await http.post(

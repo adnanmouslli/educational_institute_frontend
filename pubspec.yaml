@@ -43,6 +43,8 @@ dependencies:
   shared_preferences:
   percent_indicator: ^4.2.3
   advance_pdf_viewer:
+  intl:
+
 
 
 dev_dependencies:

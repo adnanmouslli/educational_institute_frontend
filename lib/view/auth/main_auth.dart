@@ -33,9 +33,15 @@ class MainAuth extends StatelessWidget {
                       color: AppColors.primaryColor,
                     ),
                     CustomButton(
-                      label: "تسجيل الدخول",
+                      label: "تسجيل الدخول كطالب",
                       onPressed: () {
-                        Get.toNamed(RoutesPath.login);
+                        Get.toNamed(RoutesPath.loginStudent);
+                      },
+                    ),
+                    CustomButton(
+                      label: "تسجيل الدخول كمشرف",
+                      onPressed: () {
+                        Get.toNamed(RoutesPath.loginSupervisor);
                       },
                     ),
                     CustomButton(

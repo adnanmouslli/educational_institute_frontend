@@ -109,6 +109,7 @@ class AuthController extends GetxController {
   }
 
   Future<void> login(String username, String password) async {
+    print("test");
     try {
       var req = await http.post(Uri.parse(loginUrl),
           body: jsonEncode({"username": username, "password": password}),
@@ -119,6 +120,31 @@ class AuthController extends GetxController {
               key: "student",
               value: jsonEncode(jsonDecode(req.body)['student']));
           Get.offNamed(RoutesPath.home);
+        } else {
+          Get.snackbar("خطأ", "خطأ في اسم المستخدم او كلمة المرور",
+              colorText: Colors.white, backgroundColor: Colors.red);
+        }
+      }
+      else {
+
+      }
+      print("okk");
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<void> loginSupervisor(String username, String password) async {
+    try {
+      var req = await http.post(Uri.parse(loginSupervisorUrl),
+          body: jsonEncode({"username": username, "password": password}),
+          headers: headerApi);
+      if (req.statusCode == 200) {
+        if (jsonDecode(req.body)['status'] == "success") {
+          CacheHelper.putData(
+              key: "supervisor",
+                    value: jsonEncode(jsonDecode(req.body)['supervisor']));
+          Get.offNamed(RoutesPath.homeSupervisor);
         } else {
           Get.snackbar("خطأ", "خطأ في اسم المستخدم او كلمة المرور",
               colorText: Colors.white, backgroundColor: Colors.red);

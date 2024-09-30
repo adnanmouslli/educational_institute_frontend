@@ -108,7 +108,7 @@ class DisclotureScreen extends StatelessWidget {
                                   ),
                                   const SizedBox(width: 8),
                                   Text(
-                                    'المشرف: ${disclosure['name']}',
+                                    'المشرف: ${disclosure['username']}',
                                     style: TextStyle(
                                       fontSize: 16,
                                       color: Colors.grey[700],
