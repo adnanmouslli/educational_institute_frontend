@@ -55,9 +55,10 @@ class RoutesPath {
 
 class RouteWrapper {
   static get getInitialRoute {
-    if(CacheHelper.getData(key: "student")==null) {
+
+    if(CacheHelper.getData(key: "student")==null && CacheHelper.getData(key: "supervisor") == null) {
       return RoutesPath.auth;
-    } else if (CacheHelper.getData(key: "supervisor")!=null) {
+    } else if (CacheHelper.getData(key: "supervisor") != null) {
       return RoutesPath.homeSupervisor;
     }
     else{

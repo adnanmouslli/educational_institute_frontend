@@ -3,10 +3,12 @@ import 'package:education_managment/view/grid%20screens/discloture_screen.dart';
 import 'package:education_managment/view/grid%20screens/informationBank_screen.dart';
 import 'package:education_managment/view/grid%20screens/marks_screen.dart';
 import 'package:education_managment/view/grid%20screens/time_table_screem.dart';
+import 'package:education_managment/view/gridScreenSupervisor/ClassSelectionScreen.dart';
 import 'package:education_managment/view/gridScreenSupervisor/addSection.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/app_routes.dart';
 import '../../../utils/colors.dart';
 import '../../../utils/images.dart';
 import '../../gridScreenSupervisor/addAlert.dart';
@@ -27,6 +29,16 @@ class BodySupervisor extends StatelessWidget {
       children: [
         GridItem(
           function: () {
+            Get.toNamed(RoutesPath.signup);
+          },
+          image: AssetsImages.bank,
+          imageSize: 130,
+          imageColor: AppColors.primaryColor,
+          label: "تسجيل طالب جديد",
+        ),
+
+        GridItem(
+          function: () {
             Get.to(TimeTable());
           },
           image: AssetsImages.schedule,
@@ -34,7 +46,7 @@ class BodySupervisor extends StatelessWidget {
         ),
         GridItem(
           function: () {
-            Get.to(MarksScreen());
+            Get.to(ClassSelectionScreen());
           },
           image: AssetsImages.test,
           label: "إضافة علامات للطلاب",
@@ -44,8 +56,9 @@ class BodySupervisor extends StatelessWidget {
           function: () {
             Get.to(InformationBankScreen());
           },
-          image: AssetsImages.book,
           label: "إضافة ملفات PDF لبنك المعلومات",
+          image: AssetsImages.book,
+
           imageSize: 130,
           imageColor: AppColors.primaryColor,
         ),
@@ -61,7 +74,6 @@ class BodySupervisor extends StatelessWidget {
         GridItem(
           function: () {
             Get.to(AddSectionScreen());
-
           },
           image: AssetsImages.bank,
           label: "فتح وإضافة شعب دراسية",

@@ -17,12 +17,40 @@ class HomeController extends GetxController {
     super.onInit();
     studentModel = StudentModel.getStuderData();
     getAllMarks();
+    getStudentStatus();
     print("student = ${studentModel.toMap()}");
   }
 
   // متغيرات لتخزين حالة التحميل والدفعات المالية
   var isLoading = false.obs;
   var disclosureList = [].obs;
+  var studentStatus = [].obs;
+
+  void getStudentStatus() async {
+    try {
+
+      var url = Uri.parse(getStatus);
+      var response = await http.post(
+          url,
+          body: jsonEncode({'id_student': studentModel.id})
+      );
+
+      if (response.statusCode == 200) {
+        var data = json.decode(response.body);
+        if (data['status'] == 'success') {
+          studentStatus.value = data['data']; // تخزين الدفعات المالية
+
+          print("studentStatus : ${studentStatus}");
+        }
+      }
+    }catch (e) {
+      Get.snackbar('خطأ', 'حدث خطأ أثناء جلب البيانات');
+      } finally {
+      isLoading(false); // إنهاء التحميل
+    }
+  }
+
+
 
   // جلب الدفعات المالية من الـ API
   void getAllDiscloture() async {
@@ -89,9 +117,6 @@ class HomeController extends GetxController {
       isLoading(false); // إنهاء التحميل
     }
   }
-
-
-
 
   var pdfList = [].obs;
 

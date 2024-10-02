@@ -14,6 +14,8 @@ class SupervisorHomeController extends GetxController {
   late TextEditingController titleController ;
   late TextEditingController bodyController;
 
+
+
   // دالة لإرسال البيانات إلى API
   Future<void> submitAlert() async {
     try {
@@ -49,16 +51,17 @@ class SupervisorHomeController extends GetxController {
     }
   }
 
+
+
   @override
   void onInit() {
     super.onInit();
-    superviosrModel = SuperviosrModel.getSupervisorData();
-
+     superviosrModel = SuperviosrModel.getSupervisorData();
      studentNumberController = TextEditingController();
      titleController = TextEditingController();
      bodyController = TextEditingController();
-
      print("student = ${superviosrModel.toMap()}");
+
   }
 
   @override

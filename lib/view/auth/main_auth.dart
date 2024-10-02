@@ -44,12 +44,12 @@ class MainAuth extends StatelessWidget {
                         Get.toNamed(RoutesPath.loginSupervisor);
                       },
                     ),
-                    CustomButton(
-                      label: "تسجيل الإلكتروني",
-                      onPressed: () {
-                        Get.toNamed(RoutesPath.signup);
-                      },
-                    ),
+                    // CustomButton(
+                    //   label: "تسجيل الإلكتروني",
+                    //   onPressed: () {
+                    //     Get.toNamed(RoutesPath.signup);
+                    //   },
+                    // ),
                   ],
                 ),
               ),

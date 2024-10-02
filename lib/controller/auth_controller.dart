@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
-import 'package:education_managment/models/student_model.dart';
 import 'package:education_managment/utils/api_urls.dart';
 import 'package:education_managment/utils/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +90,6 @@ class AuthController extends GetxController {
         var jsonResponse = jsonDecode(responseData.body);
         if (jsonResponse['status'] == 'success') {
           Get.snackbar("", "تم إرسال طلبك بنجاح");
-          Get.offAllNamed(RoutesPath.auth);
         } else {
           Get.snackbar("خطأ", jsonResponse['message'],
               backgroundColor: Colors.red, colorText: Colors.white);

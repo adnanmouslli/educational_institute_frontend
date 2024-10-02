@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeController());
+    HomeController controller =  Get.put(HomeController());
     return GetBuilder<HomeController>(
       builder: (controller) =>  SafeArea(
         child: Scaffold(
@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Body(),
+                Body(controller: controller),
                 SizedBox(
                   height: 10,
                 )
