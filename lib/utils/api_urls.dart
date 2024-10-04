@@ -1,9 +1,13 @@
-const String baseUrl="http://10.0.2.2/educational_institute/api";
+
+// const String baseUrl="http://10.0.2.2/educational_institute/api";
+// const String serverAi ="http://10.0.2.2:5000/predict";
+
+
 // const String baseUrl="http://192.168.72.128:9000/educational_institute/api";
+// const String serverAi ="http://192.168.72.128:5000/predict";
 
-
-const String serverAi ="http://10.0.2.2:5000/predict";
-
+const String baseUrl="http://192.168.1.5/educational_institute/api";
+const String serverAi ="http://192.168.1.5:5000/predict";
 
 const String studentUrl="$baseUrl/student";
 const String markUrl="$baseUrl/marks";
@@ -27,17 +31,27 @@ const String addSection="$baseUrl/section/addSection.php";
 
 const String getStatus="$baseUrl/marks/getStudentStatus.php";
 
-
 const String getAllStudentT="$baseUrl/marks/getAllStudentT.php";
 const String getAllStudentB="$baseUrl/marks/getAllStudentB.php";
 const String getAllSubjectT="$baseUrl/marks/getAllSubjectT.php";
 const String getAllSubjectB="$baseUrl/marks/getAllSubjectB.php";
 const String addMarkStudent="$baseUrl/marks/addMark.php";
 
+const String addPackage="$baseUrl/registration_records/addFullPackage.php";
+
+const String addTeacherAPI ="$baseUrl/teachers/addTeachers.php";
+const String getAllTeachers ="$baseUrl/teachers/getTeachers.php";
+const String getTeacherSubjects ="$baseUrl/teachers/getSubjectTeacher.php";
+const String addTeachingSchedule ="$baseUrl/teachers/addTeacherDates.php";
 
 
+const String getClassesByGrade ="$baseUrl/section/getSection.php";
 
+const String getSubjectsByGrade ="$baseUrl/subject/getSubjectsByClass.php";
 
+const String getTeachersBySubject ="$baseUrl/teachers/getTeachersBySubject.php";
+
+const String addTeachingSection ="$baseUrl/teachers/addTeacherToSection.php";
 
 
 

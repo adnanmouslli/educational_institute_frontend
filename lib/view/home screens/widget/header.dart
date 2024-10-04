@@ -1,6 +1,7 @@
 import 'package:education_managment/models/student_model.dart';
 import 'package:education_managment/utils/app_routes.dart';
 import 'package:education_managment/utils/cache_helper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../utils/colors.dart';
@@ -19,12 +20,14 @@ class Header extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Padding(
-            padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
-            child: CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.white,
-              child: Image.asset(AssetsImages.student, width: 80),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
+              child: CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.white,
+                child: Image.asset(AssetsImages.student, width: 80),
+              ),
             ),
           ),
           Column(

@@ -11,6 +11,10 @@ import 'package:get/get.dart';
 import '../../../utils/app_routes.dart';
 import '../../../utils/colors.dart';
 import '../../../utils/images.dart';
+import '../../gridScreenSupervisor/AddStudyPlanScreen.dart';
+import '../../gridScreenSupervisor/AddTeacherScheduleScreen.dart';
+import '../../gridScreenSupervisor/AddTeacherScreen.dart';
+import '../../gridScreenSupervisor/AddTeacherToClassScreen.dart';
 import '../../gridScreenSupervisor/addAlert.dart';
 import 'grid_item.dart';
 
@@ -64,7 +68,7 @@ class BodySupervisor extends StatelessWidget {
         ),
         GridItem(
           function: () {
-            Get.to(DisclotureScreen());
+            Get.to(AddStudyPlanScreen());
           },
           image: AssetsImages.bank,
           label: "إضافة خطة دراسية",
@@ -82,7 +86,7 @@ class BodySupervisor extends StatelessWidget {
         ),
         GridItem(
           function: () {
-            // Open the add teachers page
+            Get.to(AddTeacherScreen());
           },
           image: AssetsImages.bank,
           label: "إضافة مدرسين للمركز",
@@ -99,6 +103,30 @@ class BodySupervisor extends StatelessWidget {
             color: AppColors.primaryColor,
           ),
           label: "إضافة تنبيهات للطلاب",
+          imageSize: 130,
+          imageColor: AppColors.primaryColor,
+        ),
+        GridItem(
+          function: () {
+            Get.to(AddTeacherScheduleScreen());
+          },
+          icon: Icon(
+            Icons.timer_outlined,
+            size: 100,
+            color: AppColors.primaryColor,
+          ),          label: "إضافة أوقات للمدرسين",
+          imageSize: 130,
+          imageColor: AppColors.primaryColor,
+        ),
+        GridItem(
+          function: () {
+            Get.to(AddClassTeacherScreen());
+          },
+          icon: Icon(
+            Icons.add_box_outlined,
+            size: 100,
+            color: AppColors.primaryColor,
+          ),          label: "إضافة مدرسين للشعب",
           imageSize: 130,
           imageColor: AppColors.primaryColor,
         ),

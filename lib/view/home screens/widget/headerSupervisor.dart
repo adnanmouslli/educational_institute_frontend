@@ -29,7 +29,8 @@ class HeaderSupervisor extends StatelessWidget {
             child: CircleAvatar(
               radius: 50,
               backgroundColor: Colors.white,
-              child: Icon(
+              child: 
+              Icon(
                 Icons.person,
                 size: 50,
                 color: AppColors.primaryColor,
