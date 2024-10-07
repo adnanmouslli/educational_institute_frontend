@@ -45,8 +45,6 @@ dependencies:
   advance_pdf_viewer:
   intl:
 
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

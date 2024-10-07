@@ -102,20 +102,24 @@ class SignupPage extends StatelessWidget {
                       CustomDropdownButton(
                         hint: "الفئة الدراسية",
                         values: ["تاسع", "بكلوريا"],
-                        onChanged: (value) {
-                          controller.classLevel = value;
-                          controller.update();
+                        onChanged: (value) async {
+                          controller.classLevel = value; // تحديث الفئة الدراسية المختارة
+                          await controller.fetchSectionsForClassLevel(); // جلب الشعب بناءً على الفئة المختارة
+                          controller.update(); // تحديث الواجهة
                         },
                         value: controller.classLevel,
                       ),
+
                       CustomDropdownButton(
                         hint: "الشعبة الدراسية",
-                        values: ["2", "1"],
+                        values: controller.sections.map((section) => section['name']!).toList(), // عرض الـ name فقط
                         onChanged: (value) {
-                          controller.idSection = value;
+                          // إيجاد الـ id الخاص بالشعبة المختارة
+                          final selected = controller.sections.firstWhere((section) => section['name'] == value);
+                          controller.idSection = selected['id']; // تعيين الـ id الخاص بالشعبة
                           controller.update();
                         },
-                        value: controller.idSection,
+                        value: controller.sections.firstWhereOrNull((section) => section['id'] == controller.idSection)?['name'], // تعيين الاسم في حال كان id موجود
                       ),
                     CustomButton(
                       onPressed: () async {

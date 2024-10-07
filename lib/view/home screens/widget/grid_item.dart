@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../../utils/colors.dart';
 import '../../../utils/styles.dart';
@@ -34,15 +35,19 @@ class GridItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
-                child: icon ??
+                  child: icon ??
                     Image.asset(
-                  image!,
-                  width:imageSize ?? 100,
-                  color: imageColor,
+                    image!,
+                    width:imageSize ?? 100,
+                    color: imageColor,
                 ),
               ),
               const SizedBox(height: 20,),
-              Text(label, style: AppTextStyle.gridTextStyle)
+              Center(child: Padding(
+                padding: const EdgeInsets.only(left: 5 ,right: 5 ,bottom: 3),
+                child: Text(label, style: AppTextStyle.gridTextStyle),
+               )
+              )
             ],
           ),
         ),

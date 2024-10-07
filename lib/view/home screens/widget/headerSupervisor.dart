@@ -89,7 +89,7 @@ class HeaderSupervisor extends StatelessWidget {
                 icon: const Icon(Icons.logout, color: Colors.black),
                 label: const Text(
                   "تسجيل الخروج",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black , fontSize: 10),
                 ),
               ),
             ),

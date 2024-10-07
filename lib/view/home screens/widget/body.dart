@@ -34,6 +34,7 @@ class Body extends StatelessWidget {
             },
             image: AssetsImages.schedule,
             label: "برنامج الدوام"),
+
         GridItem(
             function: () {
               Get.to(MarksScreen());
@@ -41,7 +42,7 @@ class Body extends StatelessWidget {
             image: AssetsImages.test,
             label: "الاطلاع على العلامات",
             imageColor: AppColors.primaryColor),
-        GridItem(image: AssetsImages.exam, label: "برنامج الامتحان"),
+        // GridItem(image: AssetsImages.exam, label: "برنامج الامتحان"),
         GridItem(
             function: () {
               Get.to(InformationBankScreen());
@@ -117,7 +118,7 @@ class Body extends StatelessWidget {
             icon: Icon(
               Icons.smart_toy,
               size: 100,
-              color: AppColors.primaryColor,
+              color: Colors.blue,
             ),
             label: "التنبأ بعلامة الفحص النهائي",
             imageSize: 130,
@@ -129,11 +130,10 @@ class Body extends StatelessWidget {
             icon: Icon(
               Icons.analytics_outlined,
               size: 100,
-              color: AppColors.primaryColor,
+              color: Colors.blue,
             ),
             label: "تحليل الوضع الدراسي",
-            imageSize: 130,
-            imageColor: AppColors.primaryColor),
+           ),
       ],
     );
   }

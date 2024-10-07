@@ -12,8 +12,49 @@ import '../utils/cache_helper.dart';
 
 class AuthController extends GetxController {
 
+  List<Map<String, String>> sections = [];
+  String? selectedSection;
+  String? classLevel;
+
+  Future<void> fetchSectionsForClassLevel() async {
+    if (classLevel == null || classLevel!.isEmpty) return;
+
+    try {
+      final response = await http.post(
+        Uri.parse(getClassesByGrade),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'class': classLevel}),
+      );
+
+      if (response.statusCode == 200) {
+        final responseData = jsonDecode(response.body);
+
+        if (responseData['status'] == 'success') {
+          // تأكد من أن البيانات التي تم استرجاعها هي قائمة
+          sections = List<Map<String, String>>.from(
+              responseData['data'].map((section) => {
+                'id': section['id'].toString(),  // تأكد من تحويل id إلى String
+                'name': section['name'].toString()  // تأكد من تحويل name إلى String
+              }).toList()
+          );
+
+          selectedSection = null; // إعادة تعيين الشعب المختارة
+          update(); // تحديث واجهة المستخدم
+        } else {
+          Get.snackbar("خطأ", "فشل في جلب البيانات",
+              backgroundColor: Colors.red, colorText: Colors.white);
+        }
+      }
+    } catch (error) {
+      print("Error fetching classes: $error");
+      Get.snackbar("خطأ", "حدث خطأ أثناء جلب الشعب",
+          backgroundColor: Colors.red, colorText: Colors.white);
+    }
+  }
+
   File? idImageFile;
-  final ImagePicker _picker = ImagePicker(); // مكون لفتح معرض الصور
+  final ImagePicker _picker = ImagePicker();
+
 
   Future<void> pickIdImage() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
@@ -33,8 +74,8 @@ class AuthController extends GetxController {
   late TextEditingController username;
   late TextEditingController password;
   String? gender;
-  String? classLevel;
   String? idSection;
+
 
   @override
   void onInit() {
@@ -90,6 +131,14 @@ class AuthController extends GetxController {
         var jsonResponse = jsonDecode(responseData.body);
         if (jsonResponse['status'] == 'success') {
           Get.snackbar("", "تم إرسال طلبك بنجاح");
+           fullName.clear();
+          school.clear();
+           phone.clear();
+           username.clear();
+           password.clear();
+
+          update();
+
         } else {
           Get.snackbar("خطأ", jsonResponse['message'],
               backgroundColor: Colors.red, colorText: Colors.white);
@@ -151,4 +200,24 @@ class AuthController extends GetxController {
       print(e);
     }
   }
+
+  // Future<void> fetchClasses() async {
+  //   if (selectedGrade.value.isEmpty) return;
+  //
+  //   try {
+  //     final response = await http.post(
+  //       Uri.parse(getClassesByGrade),
+  //       headers: {'Content-Type': 'application/json'},
+  //       body: jsonEncode({'class': selectedGrade.value}),
+  //     );
+  //     if (response.statusCode == 200) {
+  //       final responseData = jsonDecode(response.body);
+  //       if (responseData['status'] == 'success') {
+  //         classes.value = responseData['data'];
+  //       }
+  //     }
+  //   } catch (error) {
+  //     print("Error fetching classes: $error");
+  //   }
+  // }
 }

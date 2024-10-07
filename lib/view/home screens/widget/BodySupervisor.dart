@@ -11,10 +11,13 @@ import 'package:get/get.dart';
 import '../../../utils/app_routes.dart';
 import '../../../utils/colors.dart';
 import '../../../utils/images.dart';
+import '../../gridScreenSupervisor/AddPdfScreen.dart';
 import '../../gridScreenSupervisor/AddStudyPlanScreen.dart';
 import '../../gridScreenSupervisor/AddTeacherScheduleScreen.dart';
 import '../../gridScreenSupervisor/AddTeacherScreen.dart';
 import '../../gridScreenSupervisor/AddTeacherToClassScreen.dart';
+import '../../gridScreenSupervisor/GradeSelectionScreen.dart';
+import '../../gridScreenSupervisor/PaymentClassSelectionScreen.dart';
 import '../../gridScreenSupervisor/addAlert.dart';
 import 'grid_item.dart';
 
@@ -43,13 +46,6 @@ class BodySupervisor extends StatelessWidget {
 
         GridItem(
           function: () {
-            Get.to(TimeTable());
-          },
-          image: AssetsImages.schedule,
-          label: "برنامج الدوام",
-        ),
-        GridItem(
-          function: () {
             Get.to(ClassSelectionScreen());
           },
           image: AssetsImages.test,
@@ -58,10 +54,24 @@ class BodySupervisor extends StatelessWidget {
         ),
         GridItem(
           function: () {
-            Get.to(InformationBankScreen());
+            Get.to(AddPdfScreen());
           },
           label: "إضافة ملفات PDF لبنك المعلومات",
           image: AssetsImages.book,
+
+          imageSize: 130,
+          imageColor: AppColors.primaryColor,
+        ),
+        GridItem(
+          function: () {
+            Get.to(PaymentClassSelectionScreen());
+          },
+          label: "إضافة دفعة مالية",
+          icon: Icon(
+            Icons.attach_money_outlined,
+            size: 100,
+            color: AppColors.primaryColor,
+          ),
 
           imageSize: 130,
           imageColor: AppColors.primaryColor,
@@ -80,7 +90,7 @@ class BodySupervisor extends StatelessWidget {
             Get.to(AddSectionScreen());
           },
           image: AssetsImages.bank,
-          label: "فتح وإضافة شعب دراسية",
+          label: "فتح شعب دراسية",
           imageSize: 130,
           imageColor: AppColors.primaryColor,
         ),
@@ -130,6 +140,19 @@ class BodySupervisor extends StatelessWidget {
           imageSize: 130,
           imageColor: AppColors.primaryColor,
         ),
+          GridItem(
+            function: () {
+              Get.to(GradeSelectionScreen());
+            },
+            icon: Icon(
+              Icons.view_agenda_outlined,
+              size: 100,
+              color: AppColors.primaryColor,
+            ),
+            label: "عرض الشعب الدراسية",
+            imageSize: 130,
+            imageColor: AppColors.primaryColor,
+          ),
       ],
     );
   }

@@ -13,6 +13,10 @@ class StudentModel {
   final String username;
   final String? password;
   final String? studentNumber;
+  final String id_section;
+
+
+
 
   StudentModel({
     required this.fullName,
@@ -24,7 +28,8 @@ class StudentModel {
     required this.username,
     this.password,
     this.studentNumber,
-    this.id
+    this.id,
+    required this.id_section
   });
 
   factory StudentModel.fromMap(Map<String, dynamic> json) {
@@ -38,6 +43,7 @@ class StudentModel {
       username: json['username'],
       studentNumber: json['studentNumber'],
       id: json['id'].toString(),
+      id_section: json['id_section'].toString()
     );
   }
 
@@ -51,7 +57,8 @@ class StudentModel {
       "image_url": this.image_url,
       "username": this.username,
       "password": this.password,
-      "studentNumber":studentNumber
+      "studentNumber":studentNumber,
+      "id_section":id_section
     };
   }
 

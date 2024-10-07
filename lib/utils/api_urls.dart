@@ -3,11 +3,11 @@
 // const String serverAi ="http://10.0.2.2:5000/predict";
 
 
-// const String baseUrl="http://192.168.72.128:9000/educational_institute/api";
-// const String serverAi ="http://192.168.72.128:5000/predict";
+// const String baseUrl="http://192.168.1.5/educational_institute/api";
+// const String serverAi ="http://192.168.1.5:5000/predict";
 
-const String baseUrl="http://192.168.1.5/educational_institute/api";
-const String serverAi ="http://192.168.1.5:5000/predict";
+const String baseUrl="http://192.168.72.128:9000/educational_institute/api";
+const String serverAi ="http://192.168.72.128:5000/predict";
 
 const String studentUrl="$baseUrl/student";
 const String markUrl="$baseUrl/marks";
@@ -52,6 +52,18 @@ const String getSubjectsByGrade ="$baseUrl/subject/getSubjectsByClass.php";
 const String getTeachersBySubject ="$baseUrl/teachers/getTeachersBySubject.php";
 
 const String addTeachingSection ="$baseUrl/teachers/addTeacherToSection.php";
+
+const String getSectionDetails ="$baseUrl/section/getSectionDetails.php";
+
+const String getSubjectStudent ="$baseUrl/registration_records/getSubjectStudent.php";
+
+const String getAllStudentByClass ="$baseUrl/student/getAllStudentByClass.php";
+
+const String addPayments ="$baseUrl/financial_disclosure/addDisclosure.php";
+
+const String addPdf ="$baseUrl/information_bank/addFilePdf.php";
+
+
 
 
 

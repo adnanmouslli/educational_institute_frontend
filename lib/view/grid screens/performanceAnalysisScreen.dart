@@ -72,7 +72,7 @@ class PerformanceAnalysis extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  Text(value.toString(), style: TextStyle(fontSize: 22, color: color)),
+                  Text(value.toStringAsFixed(2), style: TextStyle(fontSize: 22, color: color)),
                 ],
               ),
             ),
@@ -92,7 +92,7 @@ class PerformanceAnalysis extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title, style: TextStyle(fontSize: 18)),
-            Text(trend, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(trend , style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ],
         ),
       ),
@@ -109,7 +109,7 @@ class PerformanceAnalysis extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title, style: TextStyle(fontSize: 18)),
-            Text(difference.toString(), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            Text(difference.toStringAsFixed(2), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ],
         ),
       ),

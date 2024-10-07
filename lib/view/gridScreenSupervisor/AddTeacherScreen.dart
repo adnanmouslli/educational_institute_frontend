@@ -95,7 +95,7 @@ class AddTeacherScreen extends StatelessWidget {
               sectionTitle('اختر المواد التي سيدرسها المدرس'),
               const SizedBox(height: 10),
               Obx(() {
-                List subjects = controller.selectedGrade.value == 'تاسع '
+                List subjects = controller.selectedGrade.value == 'تاسع'
                     ? controller.allSubjectNinth
                     : controller.allSubjectBaccalaureate;
 

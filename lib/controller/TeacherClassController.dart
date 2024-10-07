@@ -67,6 +67,7 @@ class ClassTeacherController extends GetxController {
   Future<void> fetchTeachers() async {
     if (selectedSubject.value.isEmpty) return;
 
+    print(selectedSubject.value);
     try {
       final response = await http.post(
         Uri.parse(getTeachersBySubject),
@@ -76,7 +77,9 @@ class ClassTeacherController extends GetxController {
       if (response.statusCode == 200) {
         final responseData = jsonDecode(response.body);
         if (responseData['status'] == 'success') {
+
           teachers.value = responseData['data'];
+          print("teachers.value = ${teachers.value}");
         }
       }
     } catch (error) {
@@ -148,6 +151,9 @@ class ClassTeacherController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    clearSelections() ;
+    print("init teacher class");
+    update();
   }
 
   void clearSelections() {
@@ -156,6 +162,7 @@ class ClassTeacherController extends GetxController {
     selectedClass.value = '' ;
     selectedGrade.value = '' ;
     selectedSubjectTeacherId.value = '' ;
-
   }
+
+
 }
